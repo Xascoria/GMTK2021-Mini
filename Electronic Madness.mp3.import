@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Electronic Madness.mp3-0b224696554b154fe8fa21ee6688f73c.mp3str"
+
+[deps]
+
+source_file="res://Electronic Madness.mp3"
+dest_files=[ "res://.import/Electronic Madness.mp3-0b224696554b154fe8fa21ee6688f73c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

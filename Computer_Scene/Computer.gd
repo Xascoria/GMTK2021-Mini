@@ -7,3 +7,4 @@ func _ready():
 func _on_Button_pressed():
 	#get_tree().reload_current_scene()
 	$ViewportContainer/Viewport/Pong.reset_game()
+

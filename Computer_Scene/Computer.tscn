@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Computer_Scene/cupcake-crazier-computer-exemple.jpg" type="Texture" id=1]
 [ext_resource path="res://Pong_Scene/Pong.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Computer_Scene/BGMPlayer.gd" type="Script" id=3]
 [ext_resource path="res://Computer_Scene/Computer.gd" type="Script" id=4]
+[ext_resource path="res://Electronic Madness.mp3" type="AudioStream" id=5]
+[ext_resource path="res://Computer_Scene/SFXPlayer.gd" type="Script" id=6]
+[ext_resource path="res://Computer_Scene/Node.gd" type="Script" id=7]
+[ext_resource path="res://Untitled.png" type="Texture" id=8]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -109,8 +113,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Node" type="Node" parent="."]
+pause_mode = 2
+script = ExtResource( 7 )
+
+[node name="pause_popup" type="Sprite" parent="Node"]
+visible = false
+position = Vector2( 645.61, 309.591 )
+texture = ExtResource( 8 )
+
 [node name="cupcake-crazier-computer-exemple" type="Sprite" parent="."]
-position = Vector2( 640, 432 )
+position = Vector2( 640, 407.973 )
 scale = Vector2( 0.66637, 0.66637 )
 texture = ExtResource( 1 )
 
@@ -134,7 +147,21 @@ render_target_update_mode = 3
 [node name="Pong" parent="ViewportContainer/Viewport" instance=ExtResource( 2 )]
 
 [node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
 script = ExtResource( 3 )
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource( 6 )
+
+[node name="Button2" type="Button" parent="."]
+pause_mode = 2
+margin_left = 1136.0
+margin_top = 10.0
+margin_right = 1176.0
+margin_bottom = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="."]
 margin_left = 976.0
@@ -145,4 +172,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[connection signal="pressed" from="Button2" to="Node" method="_on_Button2_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
