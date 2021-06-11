@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="GMTK2021"
+config/name="GMTK2021-Mini"
 config/icon="res://icon.png"
 
 [display]
@@ -19,6 +19,12 @@ window/size/width=1280
 window/size/height=720
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[layer_names]
+
+2d_physics/layer_1="Ball"
+2d_physics/layer_2="Paddle"
+2d_physics/layer_3="Walls"
 
 [physics]
 
